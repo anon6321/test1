@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>BubbleShooter-1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="_css/main.css" rel="stylesheet">
+        <script src="_js/modernizr.js"></script>
+        <script>
+            Modernizr.load([{
+                load: "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js",
+                complete: function() {
+                   if(!window.jQuery){
+                       Modernizr.load("_js/jquery-1.11.3.js");
+                   }
+                }
+                },
+                {
+                   load: "_js/game.js",
+                   complete: function(){
+                    $(function(){
+                        var game = new BubbleShoot.Game();
+                        game.init();
+                    })
+                    }
+                }
+            ]);
+        </script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="top_bar"></div>
+            <div id="game"></div>
+            <div id="footer_bar"></div>
+            <div id="start_game" class="dialog">
+                <div id="start_game_message">
+                    <h2>Start a new game</h2>
+                </div>
+                <div class="but_start_game button">
+                    New Game
+                </div>
+            </div>            
+        </div>
+    </body>
+</html>
+
